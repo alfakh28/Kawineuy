@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: 'The Wedding of Annida & Alif',
     description:
       'Dengan segala hormat, kami mengundang Anda ke hari bahagia kami',
-    url: 'https://bit.ly/Karawineuy',
+    url: 'https://kawineuy.vercel.app',
     siteName: 'Wedding Invitation',
     images: [
       {
