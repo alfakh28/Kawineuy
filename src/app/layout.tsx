@@ -7,15 +7,18 @@ import { Toaster } from 'sonner';
 const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['100','200','300','400','500','600','700','800','900'],
 });
 
+// =============================
+// 🔥 OG CONFIG UTAMA
+// =============================
 export const metadata: Metadata = {
-  metadataBase: new URL('https://kawineuy.vercel.app'), // 🔥 WAJIB
+  metadataBase: new URL('https://kawineuy.vercel.app'),
 
   title: 'The Wedding of Annida & Alif',
   description:
-    'Join us in celebrating the union of Annida and Alif. Discover our love story, wedding details, and more.',
+    'Join us in celebrating the union of Annida & Alif. Discover our love story, wedding details, and more.',
 
   openGraph: {
     title: 'The Wedding of Annida & Alif',
@@ -25,38 +28,47 @@ export const metadata: Metadata = {
     siteName: 'Wedding Invitation',
     images: [
       {
-        url: '/og-image.jpg', // 🔥 cukup relative karena sudah pakai metadataBase
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
       },
     ],
-    locale: 'id_ID',
     type: 'website',
+    locale: 'id_ID',
   },
 
   twitter: {
     card: 'summary_large_image',
     title: 'The Wedding of Annida & Alif',
     description:
-      'Dengan segala hormat, kami mengundang Anda untuk hadir pada pernikahan kami dalam keberkahan Allah SWT ﷻ',
+      'Dengan segala hormat, kami mengundang Anda untuk hadir pada hari bahagia kami.',
     images: ['/og-image.jpg'],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
-        {/* 🔥 BACKUP META (ANTI GAGAL TOTAL) */}
+        {/* 
+        ===================================================
+        🔥 BACKUP META (ANTI GAGAL TOTAL UNTUK WHATSAPP)
+        WhatsApp sering tidak baca metadata Next.js,
+        jadi meta tag manual ini WAJIB.
+        ===================================================
+        */}
         <meta property="og:title" content="The Wedding of Annida & Alif" />
         <meta property="og:description" content="Kami mengundang Anda ke hari bahagia kami" />
         <meta property="og:image" content="https://kawineuy.vercel.app/og-image.jpg" />
+        <meta property="og:image:secure_url" content="https://kawineuy.vercel.app/og-image.jpg" />
         <meta property="og:url" content="https://kawineuy.vercel.app" />
         <meta property="og:type" content="website" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Favicons */}
+        <link rel="icon" href="/favicon.svg" />
       </head>
 
       <body className={`${poppins.variable} antialiased`}>
@@ -67,7 +79,7 @@ export default function RootLayout({
           </LocalizationProvider>
         </LangProvider>
 
-        {/* SCRIPT MARQUEE (TIDAK DIUBAH) */}
+        {/* TITLE MARQUEE SCRIPT */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
