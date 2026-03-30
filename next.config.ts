@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // 🔥 HAPUS experimental (biar aman Next.js 15)
+import type { NextConfig } from 'next'
+ 
+const nextConfig: NextConfig = {
+  /* config options here */
+}
+ 
+export default nextConfig
 
   eslint: {
     ignoreDuringBuilds: true,
