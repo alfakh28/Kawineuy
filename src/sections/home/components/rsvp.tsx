@@ -27,7 +27,7 @@ export const RSVP = () => {
   e.preventDefault();
 
   try {
-    await fetch('https://script.google.com/macros/s/AKfycbwgmG1fpbv-RZChCzwdULVEEKdb51TnW3nEpDbeolv2DF0Bq9u-oMxRXIMdkAHVKh9V/exec', {
+    await fetch('https://script.google.com/macros/s/AKfycbynJ3zwstgyVsiZeI1GsB7ml-wlGJnFOxTgFziI1-MwOAjxFwexoXcyqMq6XznVdz_0/exec', {
       method: 'POST',
       body: JSON.stringify(formData),
     });
