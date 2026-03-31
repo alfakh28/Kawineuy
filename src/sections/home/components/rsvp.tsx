@@ -32,12 +32,12 @@ const handleSubmit = async (e: React.FormEvent) => {
       guests: formData.attendance === 'yes' ? formData.guests : '0', // 🔥 FIX TAMU
     };
 
-    await fetch('https://script.google.com/macros/s/AKfycbwT1W76Pplcy9MYTscUHEDL0J5MWDBcKNNlfzSBoj5EeRDKADibuDACOmobb2UQV48I/exec', {
+    await fetch('/api/rsvp', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json', // 🔥 WAJIB INI
+        'Content-Type': 'application/json',
       },
-      body: JSON.stringify(payload), // 🔥 PAKAI PAYLOAD
+      body: JSON.stringify(payload),
     });
 
     setIsSubmitted(true);
